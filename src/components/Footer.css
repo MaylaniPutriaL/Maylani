@@ -1,0 +1,66 @@
+.footer {
+  background-color: #333; /* Warna latar belakang gelap */
+  color: #fff; /* Warna teks putih */
+  padding: 2.5rem 1.5rem; /* Padding atas bawah dan samping */
+  text-align: center; /* Teks di tengah */
+  font-family: 'Montserrat', sans-serif; /* Menggunakan font yang konsisten */
+  font-size: 0.95rem; /* Ukuran font standar */
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Garis tipis di atas footer */
+}
+
+.footer p {
+  margin-bottom: 1rem; /* Jarak teks hak cipta */
+  line-height: 1.5;
+}
+
+.footer-social-links {
+  display: flex;
+  justify-content: center; /* Ikon sosial di tengah */
+  gap: 1.2rem; /* Jarak antar ikon */
+}
+
+.footer-social-links a {
+  color: #fff; /* Warna ikon putih */
+  font-size: 1.5rem; /* Ukuran ikon */
+  transition: color 0.3s ease-in-out, transform 0.3s ease; /* Transisi untuk hover */
+  text-decoration: none; /* Menghilangkan garis bawah pada tautan */
+}
+
+.footer-social-links a:hover {
+  color: #FF69B4; /* Warna pink saat hover, sesuai tema Anda */
+  transform: translateY(-3px); /* Efek sedikit naik saat hover */
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .footer p {
+    margin-bottom: 0.8rem;
+  }
+
+  .footer-social-links {
+    gap: 1rem;
+  }
+
+  .footer-social-links a {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1.5rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .footer-social-links {
+    gap: 0.8rem;
+  }
+
+  .footer-social-links a {
+    font-size: 1.2rem;
+  }
+}

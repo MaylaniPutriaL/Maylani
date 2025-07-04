@@ -1,0 +1,260 @@
+.about-section {
+  min-height: 85vh; /* Tinggi minimum */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem; /* Padding di sekitar konten */
+  position: relative;
+  overflow: hidden; /* Penting untuk shapes di belakang */
+  background: linear-gradient(135deg, #8FBC8F 0%, #98FB98 100%); /* Background Hijau Berkilau */
+}
+
+/* --- Background Animated Shapes --- */
+.about-background-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none; /* Agar tidak menghalangi interaksi user */
+}
+
+.about-shape {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.25); /* Bentuk putih transparan */
+  border-radius: 50%; /* Bentuk lingkaran */
+  opacity: 0.8;
+  filter: blur(50px); /* Efek blur yang kuat */
+  animation: float 10s ease-in-out infinite alternate; /* Animasi bergerak */
+}
+
+/* Posisi dan warna spesifik untuk setiap shape */
+.about-shape-1 {
+  width: 180px;
+  height: 180px;
+  top: 10%;
+  left: 15%;
+  background-color: rgba(255, 192, 203, 0.4); /* Pink muda */
+  animation-delay: 0s;
+}
+
+.about-shape-2 {
+  width: 220px;
+  height: 220px;
+  bottom: 20%;
+  right: 10%;
+  background-color: rgba(173, 216, 230, 0.4); /* Biru muda */
+  animation-delay: 2s;
+}
+
+.about-shape-3 {
+  width: 130px;
+  height: 130px;
+  top: 50%;
+  left: 5%;
+  background-color: rgba(255, 255, 240, 0.4); /* Kuning muda */
+  animation-delay: 4s;
+}
+
+/* Animasi float untuk shapes */
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(20px, 20px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* --- About Content Board (Papan Pink) --- */
+.about-content {
+  width: 85%; /* Lebar relatif terhadap parent */
+  max-width: 900px; /* Lebar maksimum papan */
+  height: auto; /* Tinggi menyesuaikan konten */
+  min-height: 500px; /* Tinggi minimum agar konten muat */
+  padding: 2.5rem 3.5rem; /* Padding internal papan */
+  margin: auto; /* Pusatkan secara horizontal */
+  z-index: 1; /* Pastikan di atas shapes */
+
+  /* Styling Papan Pink Cantik dengan Gradasi & Efek Kaca */
+  background: linear-gradient(135deg, #FF69B4 0%, #FFB6C1 100%); /* Gradien pink cerah ke pink pastel */
+  border-radius: 20px; /* Sudut membulat */
+  box-shadow: 0 15px 40px rgba(255, 105, 180, 0.3); /* Bayangan pink */
+  backdrop-filter: blur(8px); /* Efek blur kaca */
+  border: 1px solid rgba(255, 255, 255, 0.8); /* Border putih solid */
+
+  opacity: 0; /* Mulai tidak terlihat untuk animasi masuk */
+  animation: fadeInBoard 1s ease-out forwards;
+  animation-delay: 0.2s; /* Delay untuk animasi masuk */
+
+  display: flex;
+  flex-direction: row; /* Teks di kiri, gambar di kanan (desktop) */
+  align-items: center; /* Pusatkan vertikal */
+  justify-content: center; /* Pusatkan horizontal (untuk gap) */
+  gap: 3rem; /* Jarak antara teks dan gambar */
+}
+
+/* Animasi fadeInBoard untuk papan konten */
+@keyframes fadeInBoard {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Judul Section (H2) --- */
+.about-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #FFFFFF; /* Warna teks putih */
+  margin-bottom: 2.5rem; /* Jarak bawah judul */
+  position: relative;
+  display: inline-block; /* Agar `::after` bekerja dengan baik */
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Bayangan teks */
+
+  opacity: 0; /* Mulai tidak terlihat untuk animasi */
+  animation: textFadeIn 0.8s ease-out forwards;
+  animation-delay: 0.6s; /* Delay animasi */
+}
+
+.about-section h2::after {
+  content: '';
+  position: absolute;
+  width: 70%;
+  height: 4px;
+  background: linear-gradient(to right, #FF69B4, #7B68EE); /* Gradien pink-ungu */
+  left: 15%;
+  bottom: -10px; 
+  border-radius: 2px;
+}
+
+/* --- About Text Content --- */
+.about-text {
+  flex: 1; 
+  text-align: left;
+  line-height: 1.8; /* Tinggi baris untuk keterbacaan */
+  max-width: 600px; /* Lebar maksimum teks */
+}
+
+.about-text p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #FFFFFF; /* Warna teks putih */
+  margin-bottom: 1rem; /* Jarak antar paragraf */
+
+  opacity: 0; /* Mulai tidak terlihat untuk animasi */
+  animation: textFadeIn 0.8s ease-out forwards;
+  animation-delay: 0.8s; /* Delay berurutan untuk setiap paragraf */
+}
+
+/* Delay animasi spesifik untuk setiap paragraf */
+.about-text p:nth-of-type(2) { animation-delay: 1s; }
+.about-text p:nth-of-type(3) { animation-delay: 1.2s; }
+.about-text p:nth-of-type(4) { animation-delay: 1.4s; }
+
+.about-text p:last-child {
+  margin-bottom: 0; 
+}
+
+/* --- About Image Container & Image --- */
+.about-image-container {
+  flex: 0.7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover; /* Pastikan gambar mengisi area tanpa terdistorsi */
+  border-radius: 50%; /* Bentuk lingkaran */
+  border: 4px solid #FFFFFF; /* Border putih di sekitar gambar */
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.5); /* Bayangan pink */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transisi untuk hover */
+  opacity: 0; 
+  animation: profilePicEntrance 0.8s ease-out forwards;
+  animation-delay: 0.4s; /* Delay animasi */
+}
+
+/* Animasi hover untuk gambar */
+.about-image:hover {
+  transform: scale(1.05) translateY(-5px); /* Sedikit membesar dan naik */
+  box-shadow: 0 0 25px rgba(255, 105, 180, 0.8); /* Bayangan lebih kuat saat hover */
+}
+
+/* Animasi masuk untuk gambar profil */
+@keyframes profilePicEntrance {
+  from { opacity: 0; transform: scale(0.8) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.btn-download-cv:hover {
+  background-color: #ff82c5; /* Warna pink lebih terang saat hover */
+  transform: translateY(-2px); /* Sedikit naik saat hover */
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.5); /* Bayangan lebih kuat saat hover */
+}
+
+/* --- General Animation Keyframes --- */
+@keyframes textFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes btnFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+  .about-content {
+    flex-direction: column; /* Ubah layout menjadi kolom */
+    gap: 2rem; /* Jarak antar elemen di kolom */
+    padding: 2rem; /* Sesuaikan padding */
+    min-height: auto; /* Tinggi menyesuaikan konten */
+  }
+  .about-image-container {
+    order: -1; 
+    margin-bottom: 0; 
+  }
+  .about-image {
+    width: 200px;
+    height: 200px;
+  }
+  .about-text {
+    max-width: 100%; 
+    text-align: center; 
+  }
+  .about-section h2 {
+    font-size: 2rem;
+  }
+  .about-text p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-section {
+    padding: 3rem 1rem;
+  }
+  .about-content {
+    padding: 1.5rem;
+  }
+  .about-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  .about-section h2::after {
+    left: 20%;
+    width: 60%;
+    bottom: -8px;
+  }
+  .about-image {
+    width: 150px;
+    height: 150px;
+    border-width: 3px;
+  }
+  .about-text p {
+    font-size: 0.85rem;
+    margin-bottom: 0.8rem;
+  }
+}

@@ -1,0 +1,353 @@
+.contact-section {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5rem 2rem;
+  position: relative;
+  overflow: hidden;
+  background-color: #98FB98; 
+  color: #333;
+}
+
+.contact-background-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.contact-shape {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  opacity: 0.7;
+  filter: blur(40px);
+  animation: float 12s ease-in-out infinite alternate;
+}
+
+.contact-shape-1 {
+  width: 250px;
+  height: 250px;
+  top: 10%;
+  left: 5%;
+  background-color: rgba(255, 240, 245, 0.4); /* Pink muda */
+  animation-delay: 0s;
+}
+
+.contact-shape-2 {
+  width: 180px;
+  height: 180px;
+  bottom: 15%;
+  right: 8%;
+  background-color: rgba(230, 240, 255, 0.4); /* Biru muda */
+  animation-delay: 3s;
+}
+
+.contact-shape-3 {
+  width: 100px;
+  height: 100px;
+  top: 70%;
+  left: 20%;
+  background-color: rgba(255, 255, 220, 0.4); /* Kuning muda */
+  animation-delay: 6s;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(25px, 25px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* --- Judul Section --- */
+.contact-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 3.2rem;
+  color: #FF69B4; /* Warna teks pink */
+  margin-bottom: 1.8rem;
+  position: relative;
+  display: inline-block;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  transition: color 0.3s ease-in-out;
+}
+
+.contact-section h2:hover {
+  color: #007bff; /* Warna biru saat hover */
+}
+
+.contact-section h2::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 4px;
+  background: linear-gradient(to right, #7B68EE, #FF69B4);
+  left: 20%;
+  bottom: -15px;
+  border-radius: 2px;
+}
+
+/* --- Konten Kontak --- */
+.contact-content {
+  max-width: 500px;
+  width: 90%; 
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+}
+
+.contact-content p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.contact-form {
+  background-color: #FFECF4; /* Pink sangat muda, mirip dengan papan pink */
+  padding: 2rem 2.5rem; 
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(255, 105, 180, 0.25);
+  margin-bottom: 1.5rem;
+  text-align: left;
+  border: 1px solid rgba(255, 105, 180, 0.5);
+  backdrop-filter: blur(5px);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top left, rgba(255,255,255,0.1) 0%, transparent 50%);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.form-group {
+  margin-bottom: 1.8rem;
+}
+
+.form-group label {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid #cce;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  background-color: #fcfcff;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #7B68EE;
+  box-shadow: 0 0 0 3px rgba(123, 104, 238, 0.2);
+  background-color: #fff;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px; 
+}
+
+/* --- Tombol Submit --- */
+.btn-submit {
+  background-color: #FF69B4; /* Warna Pink */
+  color: white;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 6px 15px rgba(255, 105, 180, 0.3);
+  width: auto;
+  text-align: center;
+}
+
+.btn-submit:hover {
+  background-color: #ff82c5;
+  transform: translateY(-3px);
+  box-shadow: 0 9px 20px rgba(255, 105, 180, 0.4);
+}
+
+/* --- Tautan Sosial --- */
+.social-links {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  color: #FF69B4;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.social-links a:hover {
+  color: #7B68EE;
+  transform: translateY(-2px);
+}
+
+/* Gaya untuk gambar ikon sosial (tetap besar) */
+.social-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 1.2rem;
+  vertical-align: middle;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  object-fit: contain;
+}
+
+.social-links a:hover .social-icon {
+  transform: scale(1.2);
+  filter: brightness(1.15);
+}
+
+
+/* --- Responsivitas --- */
+@media (max-width: 992px) {
+  .contact-content {
+    max-width: 550px; 
+  }
+  .contact-form {
+    padding: 2rem 2.5rem; 
+  }
+  .contact-section h2 {
+    margin-bottom: 1.5rem;
+  }
+  .contact-form {
+    margin-bottom: 1rem;
+  }
+  .social-links {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 3rem 1.5rem;
+  }
+  .contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .contact-section h2::after {
+    bottom: -10px;
+  }
+  .contact-content {
+    max-width: 90%;
+    width: auto;
+  }
+  .contact-content p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  .contact-form {
+    padding: 1.5rem; 
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.2);
+    margin-bottom: 1rem;
+  }
+  .form-group label {
+    font-size: 0.9rem;
+  }
+  .form-group input,
+  .form-group textarea {
+    padding: 0.7rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  .form-group textarea {
+    min-height: 90px; 
+  }
+  .btn-submit {
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+  .social-links {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 0.8rem;
+  }
+  .social-links a {
+    font-size: 0.95rem;
+  }
+  .social-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 2.5rem 1rem;
+  }
+  .contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+  }
+  .contact-content p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+  .contact-form {
+    padding: 1.2rem; 
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.15);
+    margin-bottom: 0.8rem;
+  }
+  .form-group {
+    margin-bottom: 1.2rem;
+  }
+  .form-group textarea {
+    min-height: 80px; 
+  }
+  .btn-submit {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  .social-links {
+    margin-top: 0.6rem;
+  }
+  .social-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 0.7rem;
+  }
+}

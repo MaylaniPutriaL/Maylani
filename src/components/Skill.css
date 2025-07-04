@@ -1,0 +1,224 @@
+.skills-section {
+  min-height: 85vh; 
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 1.5rem; 
+  position: relative;
+  overflow: hidden;
+
+  /* BACKGROUND HIJAU BERKILAU */
+  background: linear-gradient(135deg, #8FBC8F 0%, #98FB98 100%);
+}
+
+.skills-background-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.skills-shape {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  opacity: 0.8;
+  filter: blur(50px);
+  animation: float 10s ease-in-out infinite alternate;
+}
+
+.skills-shape-1 {
+  width: 150px;
+  height: 150px;
+  top: 5%;
+  left: 5%;
+  background-color: rgba(255, 200, 220, 0.4); 
+  animation-delay: 0s;
+}
+
+.skills-shape-2 {
+  width: 180px;
+  height: 180px;
+  bottom: 10%;
+  right: 15%;
+  background-color: rgba(150, 200, 255, 0.4); 
+  animation-delay: 3s;
+}
+
+.skills-shape-3 {
+  width: 100px;
+  height: 100px;
+  top: 40%;
+  right: 5%;
+  background-color: rgba(255, 255, 180, 0.4); 
+  animation-delay: 6s;
+}
+
+/* float animation */
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(20px, 20px); }
+  100% { transform: translate(0, 0); }
+}
+
+
+.skills-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #FFFFFF; /* Warna putih agar kontras */
+  margin-bottom: 3rem; /* Ruang di bawah judul */
+  position: relative;
+  display: inline-block;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: color 0.3s ease-in-out; /* Transisi untuk hover */
+}
+
+.skills-section h2:hover {
+  color: #6495ED; /* Warna biru saat dihover */
+}
+
+.skills-section h2::after { /* Underline elegan untuk judul */
+  content: '';
+  position: absolute;
+  width: 70%;
+  height: 4px;
+  background: linear-gradient(to right, #FF69B4, #7B68EE); /* Gradien pink-ungu */
+  left: 15%;
+  bottom: -10px;
+  border-radius: 2px;
+}
+
+
+.skills-grid {
+  display: grid;
+  /* 3 KOLOM DI ATAS DAN 3 DI BAWAH */
+  grid-template-columns: repeat(3, 1fr); /* 3 kolom dengan lebar yang sama */
+  gap: 1.5rem;
+  max-width: 700px; 
+  width: 90%;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.skill-card {
+  background: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 100%);
+  border-radius: 15px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  min-width: 100px;
+  max-width: 180px;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(255, 105, 180, 0.4);
+}
+
+.skill-icon {
+  font-size: 3.5rem;
+  color: #8A2BE2;
+  margin-bottom: 0.6rem;
+  transition: color 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+  color: #4169E1;
+}
+
+.skill-card p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+/* Responsif untuk Skills Section */
+@media (max-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 1.2rem;
+    max-width: 700px;
+  }
+  .skills-section h2 {
+    font-size: 2.2rem;
+  }
+  .skill-icon {
+    font-size: 3rem;
+  }
+  .skill-card p {
+    font-size: 0.9rem;
+  }
+  .skill-card {
+    padding: 1rem;
+    min-width: 90px;
+    max-width: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1rem;
+    max-width: 400px;
+  }
+  .skills-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  .skills-section h2::after {
+    width: 60%;
+    left: 20%;
+  }
+  .skill-icon {
+    font-size: 2.5rem;
+  }
+  .skill-card p {
+    font-size: 0.8rem;
+  }
+  .skill-card {
+    padding: 0.8rem;
+    min-width: 80px;
+    max-width: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-section {
+    padding: 2rem 1rem;
+    min-height: 70vh;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    max-width: 250px;
+  }
+  .skills-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  .skill-icon {
+    font-size: 2rem;
+  }
+  .skill-card p {
+    font-size: 0.75rem;
+  }
+  .skill-card {
+    padding: 0.7rem;
+    min-width: 70px;
+    max-width: 120px;
+  }
+}

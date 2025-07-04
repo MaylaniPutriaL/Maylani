@@ -1,0 +1,50 @@
+/* Import Google Fonts (contoh: Playfair Display, Montserrat) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+
+/* Styling Global */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif; /* Font utama yang lebih modern */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  color: #333; /* Warna teks dasar */
+  scroll-behavior: smooth; /* Untuk smooth scroll ke anchor link */
+  background-color: #f8f8f8; /* Warna background global yang lebih lembut */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  font-family: 'Playfair Display', serif; /* Font untuk judul yang lebih elegan */
+  color: #4A4A4A; /* Warna judul yang lebih gelap */
+}
+
+section {
+  padding: 80px 0; /* Padding default untuk setiap section */
+  position: relative; /* Penting untuk beberapa efek */
+  overflow: hidden; /* Mencegah overflow dari elemen-elemen di dalamnya */
+}
+
+/* Optional: Styling untuk scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c7a7e8; /* Warna ungu lembut */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a88ac7;
+}

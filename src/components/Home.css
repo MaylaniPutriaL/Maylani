@@ -1,0 +1,246 @@
+.hero-section {
+  min-height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* --- BACKGROUND HIJAU BERKILAU --- */
+  background: linear-gradient(135deg, #8FBC8F 0%, #98FB98 100%); /* Gradien Hijau Lembut & Cerah */
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-background-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.25); /* Lebih terang */
+  border-radius: 50%;
+  opacity: 0.8; /* Sedikit lebih jelas */
+  filter: blur(50px); /* Blur sedikit lebih besar untuk efek berkilau */
+  animation: float 10s ease-in-out infinite alternate;
+}
+
+.shape-1 {
+  width: 180px;
+  height: 180px;
+  top: 10%;
+  left: 15%;
+  background-color: rgba(255, 192, 203, 0.4); /* Pink muda yang jelas */
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 220px;
+  height: 220px;
+  bottom: 20%;
+  right: 10%;
+  background-color: rgba(173, 216, 230, 0.4); /* Biru muda yang jelas */
+  animation-delay: 2s;
+}
+
+.shape-3 {
+  width: 130px;
+  height: 130px;
+  top: 50%;
+  left: 5%;
+  background-color: rgba(255, 255, 240, 0.4); /* Ivory yang jelas */
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(20px, 20px); }
+  100% { transform: translate(0, 0); }
+}
+
+.hero-content {
+  width: 85%;
+  max-width: 900px;
+  height: auto;
+  min-height: 400px;
+  padding: 2rem 3rem;
+
+  margin: auto;
+  z-index: 1;
+  background: linear-gradient(135deg, #FF69B4 0%, #FFB6C1 100%); /* Pink cerah ke Pink pastel */
+  border-radius: 20px; /* Sedikit lebih membulat */
+  box-shadow: 0 15px 40px rgba(255, 105, 180, 0.3); /* Bayangan pink yang lebih jelas */
+  backdrop-filter: blur(8px); /* Efek blur kaca yang lebih kuat */
+  border: 1px solid rgba(255, 255, 255, 0.8); /* Border putih solid */
+  opacity: 0; 
+  animation: fadeInBoard 1s ease-out forwards; /* Animasi masuk untuk papan */
+  animation-delay: 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes fadeInBoard {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+  /* --- LINGKARAN PICTURE WARNA PUTIH --- */
+  border: 4px solid #FFFFFF; 
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.5); /* Bayangan pink tetap kuat */
+  transition: transform 0.3s ease-in-out;
+  opacity: 0;
+  animation: profilePicEntrance 0.8s ease-out forwards;
+  animation-delay: 0.4s; 
+}
+
+@keyframes profilePicEntrance {
+  from { opacity: 0; transform: scale(0.8) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.greeting {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #000000; /* Tetap abu-abu tua */
+  margin-top: 0;
+  margin-bottom: 0.3rem;
+  opacity: 0;
+  animation: textFadeIn 0.8s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+.name-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 3rem; 
+  color: #FFFFFF; 
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  opacity: 0;
+  animation: textFadeIn 0.8s ease-out forwards;
+  animation-delay: 0.8s;
+}
+
+.tagline {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #000000; 
+  text-shadow: none; 
+  margin-bottom: 1.8rem;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  animation: textFadeIn 0.8s ease-out forwards;
+  animation-delay: 1s;
+}
+
+.highlight-text {
+  color: #000000; 
+  font-weight: 400; 
+  font-size: 1rem; 
+  text-shadow: none; 
+  font-family: 'Montserrat', sans-serif; 
+}
+
+.btn-contact {
+  display: inline-block;
+  background-color: #FF69B4;
+  color: white;
+  padding: 0.7rem 1.8rem;
+  text-decoration: none;
+  border-radius: 40px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(255, 105, 180, 0.4);
+  opacity: 0;
+  animation: btnFadeIn 0.8s ease-out forwards;
+  animation-delay: 1.2s;
+}
+
+.btn-contact:hover {
+  background-color: #ff82c5;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.5);
+}
+
+@keyframes textFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes btnFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 80vh;
+    padding: 1rem;
+  }
+  .hero-content {
+    width: 90%;
+    min-height: 350px;
+    padding: 1.5rem;
+  }
+  .name-title {
+    font-size: 2.2rem; 
+
+  }
+  .tagline {
+    font-size: 0.9rem;
+  }
+  .profile-pic {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    min-height: 70vh;
+    padding: 1rem;
+  }
+  .hero-content {
+    min-height: 300px;
+    padding: 1rem;
+  }
+  .name-title {
+    font-size: 1.8rem; 
+  }
+  .tagline {
+    font-size: 0.8rem;
+  }
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0.3rem;
+  }
+  .btn-contact {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.75rem;
+  }
+}

@@ -1,0 +1,213 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem; 
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 240, 245, 0.7) 100%); /* Gradien putih ke pink pastel semi-transparan */
+  box-shadow: 0 4px 20px rgba(255, 105, 180, 0.2); /* Bayangan pink yang lebih jelas */
+  backdrop-filter: blur(15px); /* Efek blur yang lebih kuat */
+  border-bottom: 1px solid rgba(255, 192, 203, 0.8); /* Border bawah pink lembut solid */
+  border-left: 1px solid rgba(255, 240, 245, 0.4); /* Border samping kiri transparan */
+  border-right: 1px solid rgba(255, 240, 245, 0.4); /* Border samping kanan transparan */
+  border-radius: 0 0 20px 20px; /* Sedikit lebih membulat di bagian bawah */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease; /* Transisi halus */
+}
+
+.navbar.scrolled {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 230, 240, 0.8) 100%); /* Sedikit kurang transparan saat discroll */
+  box-shadow: 0 6px 25px rgba(255, 105, 180, 0.3);
+}
+
+.navbar-logo a, .navbar-logo span {
+  color: #FF69B4; /* Logo utama berwarna pink cerah */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Sedikit bayangan untuk pop-out */
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 0.8px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.navbar-logo a:hover, .navbar-logo span:hover {
+    color: #4169E1; /* Berubah ke biru saat hover */
+    text-shadow: 1px 1px 5px rgba(65, 105, 225, 0.3); /* Bayangan biru saat hover */
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  margin-left: 3.2rem;
+}
+
+.navbar-links a {
+  color: #FF69B4; /* Warna link default pink cerah */
+  text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.05); /* Sedikit bayangan untuk kejelasan */
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease, transform 0.2s ease, text-shadow 0.3s ease;
+  cursor: pointer;
+  padding-bottom: 5px;
+}
+
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  left: 50%;
+  background: linear-gradient(90deg, #98FB98 0%, #8FBC8F 100%); /* Gradien hijau untuk underline */
+  box-shadow: 0 0 8px rgba(144, 238, 144, 0.5); /* Kilauan hijau */
+  /* --- */
+  transform: translateX(-50%);
+  transition: width 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #4169E1; /* Berubah ke biru Royal Blue saat hover */
+  transform: translateY(-2px);
+  text-shadow: 0 0 5px rgba(65, 105, 225, 0.3); /* Bayangan biru saat hover */
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+  background: linear-gradient(90deg, #4169E1 0%, #6A8DEB 100%); /* Gradien biru saat hover */
+  box-shadow: 0 0 10px rgba(65, 105, 225, 0.6); /* Kilauan biru lebih kuat */
+  /* --- */
+}
+
+.navbar-links a.active { 
+  color: #4169E1; /* Warna link aktif biru Royal Blue */
+  font-weight: 600;
+  text-shadow: 0 0 5px rgba(65, 105, 225, 0.3);
+}
+
+.navbar-links a.active::after {
+  width: 100%;
+  background: linear-gradient(90deg, #4169E1 0%, #6A8DEB 100%);
+  box-shadow: 0 0 10px rgba(65, 105, 225, 0.6);
+}
+
+
+/* Responsif untuk Navbar */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+  .navbar-links li {
+    margin-left: 2rem;
+  }
+  .navbar-logo a, .navbar-logo span {
+    font-size: 1.8rem;
+  }
+  .navbar-links a {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 0 0 10px 10px;
+    border-left: none;
+    border-right: none;
+    background: rgba(255, 255, 255, 0.9); /* Lebih solid di mobile */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    /* --- */
+  }
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+    display: none;
+  }
+  .navbar-links.open {
+    display: flex;
+  }
+  .navbar-links li {
+    margin: 0.7rem 0;
+  }
+  .navbar-links a {
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+    color: #FF69B4; /* Default pink untuk mobile */
+    text-shadow: none;
+    /* --- */
+  }
+  .navbar-links a::after {
+    height: 2px;
+    bottom: 2px;
+    background: linear-gradient(90deg, #8FBC8F 0%, #98FB98 100%);
+    box-shadow: none;
+  }
+  .navbar-links a:hover {
+    color: #4169E1; /* Biru saat hover di mobile */
+    transform: translateY(0); /* Hapus efek naik di mobile */
+  }
+  .navbar-links a:hover::after {
+    background: linear-gradient(90deg, #4169E1 0%, #6A8DEB 100%); /* Biru saat hover di mobile */
+    box-shadow: none;
+  }
+  .navbar-links a.active {
+    color: #4169E1; /* Biru untuk link aktif di mobile */
+  }
+  .navbar-links a.active::after {
+    background: linear-gradient(90deg, #4169E1 0%, #6A8DEB 100%);
+  }
+  .navbar-logo {
+    margin-bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu-toggle {
+      display: block;
+      cursor: pointer;
+      font-size: 2.2rem;
+      color: #FF69B4; /* Warna pink untuk icon burger */
+      position: absolute;
+      right: 1.5rem;
+      top: 0.8rem;
+      z-index: 1001;
+  }
+}
+
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.8rem;
+  }
+  .navbar-logo a, .navbar-logo span {
+    font-size: 1.7rem;
+  }
+  .navbar-links li {
+    margin: 0.4rem 0;
+  }
+  .navbar-links a {
+    font-size: 1rem;
+  }
+  .menu-toggle {
+    font-size: 2rem;
+    right: 1rem;
+  }
+}
